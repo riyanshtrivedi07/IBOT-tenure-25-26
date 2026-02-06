@@ -1,0 +1,39 @@
+// C++ code
+//
+
+//BREATHING LED
+//
+const int LED_Pin = 3;
+
+const int Time_Delay = 25;
+
+int LED_Brightness = 0;
+int Change = 5;
+
+void setup()
+{
+  pinMode(LED_Pin, OUTPUT);
+}
+
+void loop()
+{
+  do
+  {
+    analogWrite(LED_Pin, LED_Brightness);
+
+    LED_Brightness += Change;
+    delay(Time_Delay);
+  }
+  while(LED_Brightness > 0 && LED_Brightness < 255);
+
+  Change = -Change;
+}
+
+
+
+
+
+
+//through pin 3 analog signals(0-1023) are sent mapped from red intensity of 0-255 and continously adjusting brightness to make LED breath
+//
+
