@@ -1,0 +1,33 @@
+// C++ code
+//
+
+//TOGGLE BUTTON
+//
+const int LED_PIN = 13;
+const int BUTTON_PIN = 2;
+
+bool LED_state = LOW;
+bool last_BUTTON_state = HIGH;
+
+void setup()
+{
+  pinMode(LED_PIN, OUTPUT);
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+}
+
+void loop()
+{
+  bool button_state = digitalRead(BUTTON_PIN);
+  
+  if (button_state == LOW && last_BUTTON_state == HIGH){
+    
+    LED_state = !LED_state;
+    digitalWrite(LED_PIN,LED_state);
+    
+  }
+  delay(250);
+}
+
+//the connections are madde in such a way that the anode of led is connected to data pin 13 and cathode and resistor are connected to ground and toggle button's one end is connected through resistor and the diagonally opposite end
+is connected to pin 2 and commanded such that the button state goes to low from high led should invert it's state
+//
