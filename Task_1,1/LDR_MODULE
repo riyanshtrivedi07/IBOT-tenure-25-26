@@ -12,4 +12,5 @@ void loop()
 {
   int reading = analogRead(ldrpin);
   Serial.println(reading);
+  delay(200);
 }
