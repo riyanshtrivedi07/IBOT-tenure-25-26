@@ -2,18 +2,23 @@
 
 Servo myservo;
 
-int potpin=3;
-int val;
+int angle = 0;
+int stepdelay 15;
 
 void setup()
 {
-  myservo.attach(11);
+  myservo.attach(9);
 }
 
 void loop()
 {
-  val=analogRead(potpin);
-  val=map(val,0,1023,0,179);
-  myservo.write(val);
-  delay(15);
+  for (angle = 0; angle <= 180; angle++) {
+    myservo.write(angle);
+    delay(stepdelay);
+  }
+
+  for (angle = 180; angle >= 0; angle--) {
+    myservo.write(angle);
+    delay(stepdelay);
+  }
 }
