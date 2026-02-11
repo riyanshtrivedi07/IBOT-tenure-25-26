@@ -33,12 +33,12 @@ void loop() {
   if (state == LOW) {
     // Laser detected (normal condition)
     noTone(buzzerpin);
-    lcd.print("No Interference ");
+    lcd.print("No Interference Detected");
   }
   else {
     // Laser interrupted (intrusion)
     tone(buzzerpin, 1000);
-    lcd.print("INTRUDER ALERT ");
+    lcd.print("INTERFERENCE DETECTED");
   }
 
   delay(200);
